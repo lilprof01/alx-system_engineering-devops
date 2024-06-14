@@ -9,3 +9,4 @@ The script 7-everybody grants execute permission to everybody on the file hello
 The script 8-james_bond grants all permission only to other users
 The script 9-john_doe gives user all permission and group read and execute but other users write and execute
 The script 10-mirror_permissions allows specified file to take a files attributed permissions
+The script 11-directories_permissions sets all subdirectory to be executable by everybody
