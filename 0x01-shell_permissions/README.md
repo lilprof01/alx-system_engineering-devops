@@ -12,4 +12,6 @@ The script 10-mirror_permissions allows specified file to take a files attribute
 The script 11-directories_permissions sets all subdirectory to be executable by everybody
 The script 12-directory_permissions makes a directory with an execute permission for only the user
 The script 13-change_group transfers the ownership of the file hello to the group school
-Te script 100-change_owner_and_group changes owner and group of all files and directory to Vincent and staff
+The script 100-change_owner_and_group changes owner and group of all files and directory to Vincent and staff
+The script 101-symbolic_link_permissions changes the ownership of a file that is a symbolic link
+The script 102-if_only changes the ownership of a file if only it belongs to a specific user
