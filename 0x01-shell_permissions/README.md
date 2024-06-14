@@ -15,3 +15,4 @@ The script 13-change_group transfers the ownership of the file hello to the grou
 The script 100-change_owner_and_group changes owner and group of all files and directory to Vincent and staff
 The script 101-symbolic_link_permissions changes the ownership of a file that is a symbolic link
 The script 102-if_only changes the ownership of a file if only it belongs to a specific user
+The script 103-star_wars runs the star war movie using the ASCII code
