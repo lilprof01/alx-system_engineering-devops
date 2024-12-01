@@ -1,0 +1,51 @@
+Explanation of Components
+
+Load Balancer (HAProxy):
+Distributes traffic among servers, ensuring availability and scalability.
+Shields the backend servers from direct exposure to the internet.
+
+Distribution Algorithm for the load balancer:
+Uses a Round Robin algorithm which sequentially distributes requests to the servers in a rotating fashion and balances the load evenly across servers.
+
+Active-Active: we are configuring for active-active because all backend servers are to handle traffic simultaneously and this setup helps increase capacity and performance.
+
+Web Server (Nginx):
+Handles static files (HTML, CSS, JS) for faster delivery it also acts as a reverse proxy, forwarding dynamic requests to the application server and improves overall response times.
+
+Application Server:
+Runs the backend logic (e.g., Python, Node.js, PHP) to process dynamic requests. It also communicates with the database to fetch or update data.
+
+Database Server (MySQL):
+Stores and manages persistent data (e.g., user information, transactions, passwords) which in turn ensures data consistency and availability.
+
+Primary-Replica (Master-Slave) Database Cluster
+
+Primary Node (Master):
+Handles all write operations (inserts, updates, deletes).
+Replicates data changes to the replica nodes.
+
+Replica Node (Slave):
+Handles read operations (queries) to reduce the load on the primary.
+Synchronizes data with the primary node.
+
+Differences between primary and replica node:
+Applications write to the primary node but can read from either the primary or replicas.
+This separation enhances performance by offloading read-heavy traffic to the replicas.
+
+Issues with This Infrastructure
+Single Points of Failure (SPOF):
+
+Load Balancer: If HAProxy fails, the entire system becomes unavailable.
+Database Server: No redundancy; if the database fails, the app cannot function.
+Web Server: If the Nginx web server goes down, static file serving and reverse proxying stop.
+Security Issues:
+
+No firewalls to restrict access between servers or protect against external threats.
+No HTTPS for encrypted traffic, leaving data vulnerable during transmission.
+No Monitoring:
+
+No tools to detect or alert on server failures, performance issues, or resource exhaustion.
+This lack of visibility can result in prolonged downtimes or degraded performances.
+
+LINK TO IMAGE BELOW
+https://drive.google.com/file/d/17XXRmz99GVBa_lLi8aixNlvbA_W_wm6T/view?usp=sharing
