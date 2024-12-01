@@ -1,0 +1,16 @@
+Explaining the Concepts
+A server is simply a computer set up to handle requests from other computers. It might not look like a regular desktop or laptop, but it works similarly. Its job is to run the website and respond to people who want to access it.
+
+The domain name, like www.foobar.com, makes it easier for people to find the website. Instead of remembering the server’s IP address (which is a string of numbers like 8.8.8.8), people can just use the domain name, and the DNS takes care of connecting it to the server.The www part of www.foobar.com is a subdomain, and its DNS record is usually an A record or a CNAME record. An A record connects the subdomain directly to the server’s IP address, while a CNAME record might point it to another domain name.
+
+The web server, in this case, Nginx, acts like a gatekeeper. It handles requests from users and decides whether to respond directly or to pass the request to the application server. Meanwhile, the database, MySQL, is where all the important data for the website is stored. Think of it like a library that the application server can access whenever it needs information.When the user’s browser and the server talk to each other, they use a common language called HTTP or HTTPS. It’s like sending letters back and forth, but much faster and more technical.
+
+Issues with the Setup
+This kind of setup has a few problems. First, it’s a single point of failure, meaning everything depends on this one server. If it breaks, the entire website goes down. There’s no backup system to keep things running.Second, maintaining the server can cause downtime. For example, if you need to restart the server after updating the code, the website won’t be available until it’s back up.
+
+Lastly, this setup struggles to handle a lot of visitors. If too many people try to access the website at once, the server might become overloaded and slow down or crash. There’s no way to easily add more resources to handle the extra traffic.
+
+This setup works well for small websites with low traffic, but it’s not ideal for larger or growing websites.
+
+LINK TO IMAGE BELOW
+https://drive.google.com/file/d/1EZou2FKzhalHZbe5n5v8RnDy9bVTKxjY/view?usp=sharing
