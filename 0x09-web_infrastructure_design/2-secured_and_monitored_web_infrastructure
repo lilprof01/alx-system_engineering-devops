@@ -1,0 +1,51 @@
+Added Components and Justifications
+Firewalls:
+To control and restrict network traffic.
+Also to prevent unauthorized access to internal servers.
+
+SSL Certificate:
+Ensures traffic between users and the servers is encrypted.
+Protects data from being intercepted (middle-man attacks).
+
+Monitoring Clients:
+Track server health, resource usage, traffic, and error rates.
+Send data to a centralized monitoring service (e.g., Sumologic, Datadog, or Prometheus).
+
+Why these features are Added
+1. Firewalls:
+To protect internal resources by limiting access based on IP addresses, ports, and protocols.
+Block malicious traffic such as DDoS attacks or unauthorized scans.
+2. HTTPS (SSL Certificate):
+Encrypts traffic, ensuring sensitive user information (like login credentials) isn’t exposed.
+Boosts user trust and complies with modern security standards.
+3. Monitoring:
+Tracks the performance of infrastructure and detects issues proactively.
+Helps identify trends, such as increased QPS (Queries Per Second), so scaling decisions can be made.
+Sends metrics/logs to a centralized monitoring service for real-time alerts.
+Monitoring Tools and QPS Monitoring
+How Data Collection Works:
+
+Monitoring QPS:
+For Web Servers:
+Nginx logs QPS (via access logs).
+Monitors using tools like Logstash or Nginx’s built-in status module.
+For Load Balancers:
+Tracks requests handled by HAProxy using its statistics module or exported logs.
+
+
+ISSUES with the infrastructure:
+Terminating SSL at the Load Balancer:
+Problem:
+Traffic between the load balancer and internal servers is unencrypted and this can be exploited if the internal network is breached.
+
+Single MySQL Server for Writes:
+Problem:
+If the primary MySQL server fails, write operations stop and this can lead to risk of data loss or downtime.
+
+Servers with All Components (Monolithic Servers):
+Problem:
+A failure in one server impacts all components (web, app, and database).
+Scaling becomes inefficient, as we must replicate all components unnecessarily.
+
+LINK TO IMAGE BELOW
+https://drive.google.com/file/d/10a-51SJ538om-jEzgjnz3Q0D-BfXkuPv/view?usp=sharing
