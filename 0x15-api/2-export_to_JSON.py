@@ -1,23 +1,33 @@
 #!/usr/bin/python3
 """
-this script returns info about a customer's todo list
-and exports to JSON
+this script retrieves and save a user's TODO list in JSON format.
 """
 import json
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
+    user_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com"
-    employeeId = argv[1]
+    user_url = f"{url}/users/{user_id}"
+    todos_url = f"{url}/todos?userId={user_id}"
 
-    employee = requests.get("{}/users/{}".format(url, employeeId)).json()
-    todos = requests.get(url + "/todos", params={"userId": employeeId}).json()
+    user_response = requests.get(user_url).json()
+    todos_response = requests.get(todos_url).json()
 
-    userName = employee.get('username')
-    fileName = employeeId + ".json"
+    username = user_response.get('username')
+    tasks = []
 
-    line = []
-    for info in todos:
-        info.append({'task': info.get('title'), })
+    for task in todos_response:
+        tasks.append({
+            "task": task.get('title'),
+            "completed": task.get('completed'),
+            "username": username
+        })
+
+    data = {user_id: tasks}
+    filename = f"{user_id}.json"
+
+    with open(filename, 'w') as json_file:
+        json.dump(data, json_file)
