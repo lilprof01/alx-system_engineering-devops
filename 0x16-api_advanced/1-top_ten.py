@@ -10,7 +10,7 @@ import requests
 def top_ten(subreddit):
     """function prints titles of the top 10 hot posts"""
     headers = {
-        "User-Agent": "0x16. API_advanced-e_kiminza"
+        "User-Agent": "0x16. API_advanced-lilprof01"
     }
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     params = {"limit": 10}
