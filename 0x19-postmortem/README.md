@@ -8,7 +8,7 @@ Root Cause: A syntax error in a newly deployed Nginx configuration file caused t
 
 ## Timeline
 
-14:00 UTC: Issue detected via automated monitoring alerts (HTTP 5xx errors spiked to 100%).
+14:00 UTC: Issue detected via automated monitoring alerts (HTTP 503 errors spiked to 100%).
 
 14:05: Engineering team began investigating server health, assuming a potential DDoS attack. Firewall logs and network traffic were analyzed, but no anomalies found.
 
