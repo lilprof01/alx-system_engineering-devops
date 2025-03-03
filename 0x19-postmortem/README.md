@@ -30,30 +30,30 @@ A deployment at 13:55 UTC introduced an Nginx configuration file (app_v2.conf) w
 
 ### Resolution:
 
-*Rollback: Reverted to the previous Nginx configuration (app_v1.conf).
+* Rollback: Reverted to the previous Nginx configuration (app_v1.conf).
 
-*Validation: Manually tested the configuration using nginx -t before reapplying.
+* Validation: Manually tested the configuration using nginx -t before reapplying.
 
-*Restart: Executed a global systemctl restart nginx to reload the corrected config.
+* Restart: Executed a global systemctl restart nginx to reload the corrected config.
 
 ## Corrective and Preventative Measures
 
 ### Improvements:
 
-*Strengthen deployment pipelines to catch configuration errors earlier.
+* Strengthen deployment pipelines to catch configuration errors earlier.
 
-*Improve monitoring to detect service failures immediately after deployments.
+* Improve monitoring to detect service failures immediately after deployments.
 
-*Formalize rollback procedures to reduce recovery time.
+* Formalize rollback procedures to reduce recovery time.
 
 ## Tasks:
 
-*Implement pre-deployment configuration validation: Add nginx -t as a CI/CD step for all Nginx config changes. (Due: March 30)
+* Implement pre-deployment configuration validation: Add nginx -t as a CI/CD step for all Nginx config changes. (Due: March 30)
 
-*Enhance monitoring: Create alerts for failed Nginx reloads and HTTP error rates >5%. (Due: April 5)
+* Enhance monitoring: Create alerts for failed Nginx reloads and HTTP error rates >5%. (Due: April 5)
 
-*Deploy canary releases: Test configuration changes on 10% of servers before full rollout. (Due: April 10)
+* Deploy canary releases: Test configuration changes on 10% of servers before full rollout. (Due: April 10)
 
-*Document rollback playbook: Include explicit steps to restart dependencies post-rollback. (Due: March 25)
+* Document rollback playbook: Include explicit steps to restart dependencies post-rollback. (Due: March 25)
 
-*Conduct postmortem review: Train team on configuration management best practices. (Due: March 20)
+* Conduct postmortem review: Train team on configuration management best practices. (Due: March 20)
