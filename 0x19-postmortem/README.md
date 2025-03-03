@@ -2,7 +2,7 @@
 
 Duration: February 15, 2024, 14:00–16:00 UTC (2 hours).
 
-Impact: 100% of users experienced HTTP 503 errors when accessing example.com. The web service was completely unavailable.
+Impact: 100% of users experienced HTTP 503 errors when accessing the website. The web service was completely unavailable.
 
 Root Cause: A syntax error in a newly deployed Nginx configuration file caused the service to crash.
 
