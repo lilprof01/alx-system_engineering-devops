@@ -1,3 +1,5 @@
+![3828553](https://github.com/user-attachments/assets/0f649a01-50db-4cb9-a451-64c717523c7b)
+
 # Issue Summary
 
 Duration: February 15, 2024, 14:00–16:00 UTC (2 hours).
